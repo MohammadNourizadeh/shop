@@ -1,27 +1,17 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter,
+  createBrowserRouter,
+  Route,
+  RouterProvider,
+  Routes,
+} from "react-router-dom";
 import "./App.css";
-import { routes } from "./routes.jsx";
+import { routes } from "./routes";
 
 function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        {routes.map((route) =>
-          route.children ? (
-            <Route path={route.path} element={route.element}>
-              {route.children.map((item) => (
-                <Route path={item.path} element={item.element} />
-              ))}
-            </Route>
-          ) : (
-            <Route path={route.path} element={route.element} />
-          )
-        )}
-      </Routes>
-    </BrowserRouter>
-  );
+  const myRoutes = createBrowserRouter(routes);
+
+  return <RouterProvider router={myRoutes} />;
 }
 
 export default App;
-
-
