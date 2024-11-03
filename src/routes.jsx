@@ -1,6 +1,6 @@
 import { Navigate } from "react-router-dom";
 import Admin from "./layOuts/admin/Admin";
-import HomePage from "./pages/HomePage/HomePage";
+import HomePage, { fetchData } from "./pages/HomePage/HomePage";
 
 export const routes = [
   {
@@ -14,6 +14,7 @@ export const routes = [
       {
         path: "/admin/home",
         element: <HomePage />,
+        loader: fetchData,
       },
     ],
   },
