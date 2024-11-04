@@ -1,4 +1,6 @@
 import { useLoaderData } from "react-router-dom";
+import styles from "./ProductInfoPage.module.scss";
+import Card from "../../components/card/Card";
 
 export const fetchProductInfo = async (params) => {
   const res = await fetch(
@@ -12,5 +14,9 @@ export const fetchProductInfo = async (params) => {
 export default function ProductInfoPage() {
   const product = useLoaderData();
 
-  return <div></div>;
+  return (
+    <div className={styles.king}>
+      <Card product={product} />
+    </div>
+  );
 }
