@@ -2,6 +2,7 @@ import { faLeftLong, faRightLong } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import styles from "./Card.module.scss";
+import { Link } from "react-router-dom";
 
 export default function Card({ product }) {
   // state
@@ -33,7 +34,9 @@ export default function Card({ product }) {
         >
           <FontAwesomeIcon icon={faLeftLong} />
         </div>
-        <img src={product.images[imgCount]} alt={product.title} />
+        <Link to={`/admin/product/${product.id}`}>
+          <img src={product.images[imgCount]} alt={product.title} />
+        </Link>
         <div
           className={styles.rightArrowCont}
           onClick={() => {
