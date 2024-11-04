@@ -1,11 +1,16 @@
 .king {
+  box-shadow: 0 0 8px 3px rgba(152, 152, 152, 0.444);
   width: 23%;
   overflow: hidden;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  justify-content: space-around;
+  justify-content: space-between;
+
+  .productInfoCont{
+    padding: 10px;
+    font-weight: bold;
+  }
 
   .imgContainer {
     position: relative;
@@ -55,17 +60,115 @@
     }
   }
 
-  .btnContainer {
+  .productInfoCont {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+    .btnContainer {
+      display: flex;
+      justify-content: center;
 
-    button {
-      border: 0;
-      width: 150px;
-      height: 30px;
-      border-radius: 10px;
-      background-color: rgb(1, 126, 1);
-      color: white;
+      button {
+        border: 0;
+        width: 150px;
+        height: 30px;
+        border-radius: 10px;
+        background-color: rgb(1, 126, 1);
+        color: white;
+      }
+    }
+  }
+}
+
+// style of product info page
+.infoPageStyle {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  overflow: auto;
+
+  .imgContainer {
+    position: relative;
+    width: 30%;
+
+    img {
+      width: 100%;
+    }
+    .rightArrowCont {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 20%;
+      color: rgba(0, 0, 0, 0.411);
+      font-size: 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.2s ease-in-out;
+
+      &:hover {
+        cursor: pointer;
+        background-color: rgba(128, 128, 128, 0.299);
+        font-size: 1.7rem;
+        color: rgba(0, 0, 0, 0.811);
+      }
+    }
+    .leftArrowCont {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 20%;
+      color: rgba(0, 0, 0, 0.411);
+      font-size: 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.2s ease-in-out;
+
+      &:hover {
+        cursor: pointer;
+        background-color: rgba(128, 128, 128, 0.299);
+        font-size: 1.7rem;
+        color: rgba(0, 0, 0, 0.811);
+      }
+    }
+  }
+  .productInfoCont {
+    width: 35%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    font-size: 1.2em;
+
+    .titleContainer,
+    .priceContainer {
+      font-weight: 900;
+    }
+    .titleContainer {
+      font-size: 1.4em;
+    }
+
+    .descriptionContainer {
+      line-height: 32px;
+      text-align: justify;
+    }
+
+    .btnContainer {
+      display: flex;
+      justify-content: center;
+
+      button {
+        border: 0;
+        width: 150px;
+        height: 30px;
+        border-radius: 10px;
+        background-color: rgb(1, 126, 1);
+        color: white;
+      }
     }
   }
 }

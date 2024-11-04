@@ -4,7 +4,7 @@ import { useState } from "react";
 import styles from "./Card.module.scss";
 import { Link } from "react-router-dom";
 
-export default function Card({ product }) {
+export default function Card({ product, productInfoPage = false }) {
   // state
   const [imgCount, setImgCount] = useState(0);
 
@@ -24,7 +24,7 @@ export default function Card({ product }) {
   };
 
   return (
-    <div className={styles.king}>
+    <div className={productInfoPage ? styles.infoPageStyle : styles.king}>
       <div className={styles.imgContainer}>
         <div
           className={styles.leftArrowCont}
@@ -46,10 +46,13 @@ export default function Card({ product }) {
           <FontAwesomeIcon icon={faRightLong} />
         </div>
       </div>
-      <div>$ {product.price}</div>
-      <div>{product.title}</div>
-      <div className={styles.btnContainer}>
-        <button>add</button>
+      <div className={styles.productInfoCont}>
+        <div className={styles.titleContainer}>{product.title}</div>
+        {productInfoPage && <div className={styles.descriptionContainer}>{product.description}</div>}
+        <div className={styles.priceContainer}>$ {product.price}</div>
+        <div className={styles.btnContainer}>
+          <button>add</button>
+        </div>
       </div>
     </div>
   );

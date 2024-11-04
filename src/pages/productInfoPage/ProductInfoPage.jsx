@@ -16,7 +16,7 @@ export default function ProductInfoPage() {
 
   return (
     <div className={styles.king}>
-      <Card product={product} />
+      <Card product={product} productInfoPage />
     </div>
   );
 }
