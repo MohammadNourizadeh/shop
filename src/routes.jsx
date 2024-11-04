@@ -1,7 +1,9 @@
 import { Navigate } from "react-router-dom";
 import Admin from "./layOuts/admin/Admin";
 import HomePage, { fetchData } from "./pages/HomePage/HomePage";
-import ProductInfoPage from "./pages/productInfoPage/ProductInfoPage";
+import ProductInfoPage, {
+  fetchProductInfo,
+} from "./pages/productInfoPage/ProductInfoPage";
 
 export const routes = [
   {
@@ -20,6 +22,9 @@ export const routes = [
       {
         path: "/admin/product/:id",
         element: <ProductInfoPage />,
+        loader: async ({ params }) => {
+          return await fetchProductInfo(params);
+        },
       },
     ],
   },
