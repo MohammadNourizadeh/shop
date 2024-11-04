@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom";
-import Card from "./components/card/Card";
+import Card from "../../components/card/Card";
 import styles from "./HomePage.module.scss";
 
 export const fetchData = async () => {
