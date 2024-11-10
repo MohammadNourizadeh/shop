@@ -1,5 +1,6 @@
 import ImageSwiper from "../swiper/ImageSwiper";
 import styles from "./Card.module.scss";
+import CardBtn from "./components/cardBtn/CardBtn";
 
 export default function Card({ product, productInfoPage = false }) {
   return (
@@ -20,9 +21,7 @@ export default function Card({ product, productInfoPage = false }) {
           </div>
         )}
         <div className={styles.priceContainer}>$ {product.price}</div>
-        <div className={styles.btnContainer}>
-          <button>add</button>
-        </div>
+        <CardBtn />
       </div>
     </div>
   );
