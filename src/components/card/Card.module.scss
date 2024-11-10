@@ -7,56 +7,14 @@
   flex-direction: column;
   justify-content: space-between;
 
-  .productInfoCont{
+  .productInfoCont {
     padding: 10px;
     font-weight: bold;
   }
 
   .imgContainer {
-    position: relative;
-
     img {
       width: 100%;
-    }
-    .rightArrowCont {
-      position: absolute;
-      right: 0;
-      top: 0;
-      height: 100%;
-      width: 20%;
-      color: rgba(0, 0, 0, 0.411);
-      font-size: 1.5rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: 0.2s ease-in-out;
-
-      &:hover {
-        cursor: pointer;
-        background-color: rgba(128, 128, 128, 0.299);
-        font-size: 1.7rem;
-        color: rgba(0, 0, 0, 0.811);
-      }
-    }
-    .leftArrowCont {
-      position: absolute;
-      left: 0;
-      top: 0;
-      height: 100%;
-      width: 20%;
-      color: rgba(0, 0, 0, 0.411);
-      font-size: 1.5rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: 0.2s ease-in-out;
-
-      &:hover {
-        cursor: pointer;
-        background-color: rgba(128, 128, 128, 0.299);
-        font-size: 1.7rem;
-        color: rgba(0, 0, 0, 0.811);
-      }
     }
   }
 
@@ -95,46 +53,6 @@
 
     img {
       width: 100%;
-    }
-    .rightArrowCont {
-      position: absolute;
-      right: 0;
-      top: 0;
-      height: 100%;
-      width: 20%;
-      color: rgba(0, 0, 0, 0.411);
-      font-size: 1.5rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: 0.2s ease-in-out;
-
-      &:hover {
-        cursor: pointer;
-        background-color: rgba(128, 128, 128, 0.299);
-        font-size: 1.7rem;
-        color: rgba(0, 0, 0, 0.811);
-      }
-    }
-    .leftArrowCont {
-      position: absolute;
-      left: 0;
-      top: 0;
-      height: 100%;
-      width: 20%;
-      color: rgba(0, 0, 0, 0.411);
-      font-size: 1.5rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: 0.2s ease-in-out;
-
-      &:hover {
-        cursor: pointer;
-        background-color: rgba(128, 128, 128, 0.299);
-        font-size: 1.7rem;
-        color: rgba(0, 0, 0, 0.811);
-      }
     }
   }
   .productInfoCont {
