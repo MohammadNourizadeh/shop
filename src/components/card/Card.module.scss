@@ -22,7 +22,6 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
-    
   }
 }
 
@@ -48,33 +47,5 @@
     display: flex;
     justify-content: space-around;
     flex-direction: column;
-    font-size: 1.2em;
-
-    .titleContainer,
-    .priceContainer {
-      font-weight: 900;
-    }
-    .titleContainer {
-      font-size: 1.4em;
-    }
-
-    .descriptionContainer {
-      line-height: 32px;
-      text-align: justify;
-    }
-
-    .btnContainer {
-      display: flex;
-      justify-content: center;
-
-      button {
-        border: 0;
-        width: 150px;
-        height: 30px;
-        border-radius: 10px;
-        background-color: rgb(1, 126, 1);
-        color: white;
-      }
-    }
   }
 }

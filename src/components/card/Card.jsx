@@ -1,6 +1,7 @@
 import ImageSwiper from "../swiper/ImageSwiper";
 import styles from "./Card.module.scss";
 import CardBtn from "./components/cardBtn/CardBtn";
+import CardInfo from "./components/cardInfo/CardInfo";
 
 export default function Card({ product, productInfoPage = false }) {
   return (
@@ -14,13 +15,12 @@ export default function Card({ product, productInfoPage = false }) {
         />
       </div>
       <div className={styles.productInfoCont}>
-        <div className={styles.titleContainer}>{product.title}</div>
-        {productInfoPage && (
-          <div className={styles.descriptionContainer}>
-            {product.description}
-          </div>
-        )}
-        <div className={styles.priceContainer}>$ {product.price}</div>
+        <CardInfo
+          price={product.price}
+          title={product.title}
+          isDescriptionOn={productInfoPage}
+          description={product.description}
+        />
         <CardBtn product={product} />
       </div>
     </div>
