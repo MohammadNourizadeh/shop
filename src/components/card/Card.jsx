@@ -21,7 +21,7 @@ export default function Card({ product, productInfoPage = false }) {
           </div>
         )}
         <div className={styles.priceContainer}>$ {product.price}</div>
-        <CardBtn />
+        <CardBtn product={product} />
       </div>
     </div>
   );
