@@ -13,8 +13,18 @@
   }
 
   .imgContainer {
+    position: relative;
+
     img {
       width: 100%;
+    }
+    .productCountContainer {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 10px;
+      z-index: 999;
+      font-size: 1.4em;
     }
   }
 
@@ -40,6 +50,15 @@
 
     img {
       width: 100%;
+    }
+
+    .productCountContainer {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 10px;
+      z-index: 999;
+      font-size: 1.4em;
     }
   }
   .productInfoCont {
