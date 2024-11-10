@@ -1,30 +1,16 @@
-import { Link } from "react-router-dom";
-import { Navigation, Pagination, EffectFade } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
+import ImageSwiper from "../swiper/ImageSwiper";
 import styles from "./Card.module.scss";
 
 export default function Card({ product, productInfoPage = false }) {
   return (
     <div className={productInfoPage ? styles.infoPageStyle : styles.king}>
       <div className={styles.imgContainer}>
-        <Swiper
-          modules={[Navigation, Pagination, EffectFade]}
-          pagination={{ clickable: true }}
-          navigation
-          effect="fade"
-        >
-          {product.images.map((image, index) => (
-            <SwiperSlide key={index}>
-              {productInfoPage ? (
-                <img src={image} alt={product.title} />
-              ) : (
-                <Link to={`/admin/product/${product.id}`}>
-                  <img src={image} alt={product.title} />
-                </Link>
-              )}
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        <ImageSwiper
+          images={product.images}
+          imageAlt={product.title}
+          isLink={productInfoPage}
+          linkAddress={`/admin/product/${product.id}`}
+        />
       </div>
       <div className={styles.productInfoCont}>
         <div className={styles.titleContainer}>{product.title}</div>
