@@ -7,13 +7,14 @@
   li {
     a {
       display: flex;
+      align-items: center;
       gap: 8px;
       color: white;
       text-decoration: none;
       padding: 5px;
 
       &:hover {
-        border-bottom: 1px solid;
+        border-bottom: 2px solid;
         margin-bottom: -1px;
       }
       &:active {
