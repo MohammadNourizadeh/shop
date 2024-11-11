@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { toast } from "react-toastify";
 import MainContext from "../../../../contexts/MainContext";
 import styles from "./CardBtn.module.scss";

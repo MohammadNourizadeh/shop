@@ -1,6 +1,5 @@
 import { faMultiply } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
 import styles from "./ProductCount.module.scss";
 
 export default function ProductCount({ choosedProducts, productIndex }) {

@@ -5,7 +5,7 @@ import {
   faStore,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import MainContext from "../../../contexts/MainContext";
 import styles from "./NavItemsList.module.scss";

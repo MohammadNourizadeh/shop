@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./CardInfo.module.scss";
 
 export default function CardInfo({

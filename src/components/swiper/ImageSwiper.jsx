@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { EffectFade, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
