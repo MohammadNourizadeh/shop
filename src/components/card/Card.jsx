@@ -4,6 +4,7 @@ import styles from "./Card.module.scss";
 import CardBtn from "./components/cardBtn/CardBtn";
 import CardInfo from "./components/cardInfo/CardInfo";
 import MainContext from "../../contexts/MainContext";
+import ProductCount from "./components/productCount/ProductCount";
 
 export default function Card({ product, productInfoPage = false }) {
   // context
@@ -24,9 +25,10 @@ export default function Card({ product, productInfoPage = false }) {
           linkAddress={`/admin/product/${product.id}`}
         />
         {productIndex !== -1 && (
-          <div className={styles.productCountContainer}>
-            <span>{choosedProducts[productIndex].count}</span>
-          </div>
+          <ProductCount
+            choosedProducts={choosedProducts}
+            productIndex={productIndex}
+          />
         )}
       </div>
       <div className={styles.productInfoCont}>
