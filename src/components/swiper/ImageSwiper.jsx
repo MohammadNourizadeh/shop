@@ -16,7 +16,7 @@ export default function ImageSwiper({
       navigation
       effect={isLink ? "fade" : ""}
     >
-      {images.map((image, index) => (
+      {images?.map((image, index) => (
         <SwiperSlide key={index}>
           {isLink ? (
             <img src={image} alt={imageAlt} />
