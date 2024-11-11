@@ -14,14 +14,14 @@ export default function Nav() {
       <ul>
         <li>
           <Link to={"/"}>
-            <FontAwesomeIcon icon={faStore} />
-            store
+            <FontAwesomeIcon icon={faHome} />
+            home
           </Link>
         </li>
         <li>
           <Link to={"/"}>
-            <FontAwesomeIcon icon={faHome} />
-            home
+            <FontAwesomeIcon icon={faStore} />
+            store
           </Link>
         </li>
         <li>
