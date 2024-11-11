@@ -5,10 +5,10 @@ import {
   faStore,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
-import styles from "./Nav.module.scss";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import MainContext from "../../contexts/MainContext";
+import styles from "./Nav.module.scss";
 
 export default function Nav() {
   // context
