@@ -7,8 +7,8 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import MainContext from "../../contexts/MainContext";
 import styles from "./Nav.module.scss";
+import MainContext from "../../contexts/MainContext";
 
 export default function Nav() {
   // context
