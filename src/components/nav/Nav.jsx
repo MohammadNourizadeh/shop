@@ -7,8 +7,13 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import styles from "./Nav.module.scss";
+import { useContext } from "react";
+import MainContext from "../../contexts/MainContext";
 
 export default function Nav() {
+  // context
+  const { choosedProducts } = useContext(MainContext);
+
   return (
     <nav className={styles.king}>
       <ul>
@@ -33,7 +38,11 @@ export default function Nav() {
         </li>
         <li className={styles.basketItemContainer}>
           <Link to={"/"} className={styles.basketItemLink}>
-            <span className={styles.basketItemsCount}>2</span>
+            {choosedProducts.length > 0 && (
+              <span className={styles.basketItemsCount}>
+                {choosedProducts.length}
+              </span>
+            )}
             <FontAwesomeIcon icon={faBasketShopping} />
           </Link>
         </li>
