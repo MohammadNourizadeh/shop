@@ -1,5 +1,7 @@
 .king {
   height: 10%;
+  display: flex;
+  justify-content: space-evenly;
   background-color: rgb(61, 65, 83);
   position: sticky;
   top: 0;
@@ -10,9 +12,8 @@
 
   ul {
     display: flex;
-    justify-content: flex-start;
     align-items: center;
-    gap: 80px;
+    gap: 50px;
     padding: 10px;
     list-style: none;
 

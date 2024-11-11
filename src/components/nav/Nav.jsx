@@ -18,6 +18,8 @@ export default function Nav() {
     <nav className={styles.king}>
       <ul>
         <li className={styles.shopName}>VogueShop</li>
+      </ul>
+      <ul>
         <li>
           <Link to={"/"}>
             <FontAwesomeIcon icon={faHome} />
