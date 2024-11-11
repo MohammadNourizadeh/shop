@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { toast } from "react-toastify";
 import MainContext from "../../../../contexts/MainContext";
 import styles from "./CardBtn.module.scss";
 
@@ -15,6 +16,7 @@ export default function CardBtn({ product }) {
   const handelAdd = () => {
     if (productIndex === -1) {
       setChoosedProducts((prev) => [...prev, { ...product, count: 1 }]);
+      toast.success("added");
     } else {
       const temp = [...choosedProducts];
       temp[productIndex].count++;
