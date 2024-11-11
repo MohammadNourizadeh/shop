@@ -1,17 +1,17 @@
 .king {
-  height: 8vh;
+  height: 10%;
   background-color: rgb(61, 65, 83);
   position: sticky;
   top: 0;
   z-index: 999;
   color: white;
   font-size: 0.9em;
+  user-select: none;
 
   ul {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    height: 100%;
     gap: 100px;
     padding: 10px;
     list-style: none;
@@ -32,6 +32,12 @@
           color: rgba(255, 255, 255, 0.77);
         }
       }
+    }
+
+    .shopName {
+      font-size: 3em;
+      font-family: "Brush Script MT", cursive;
+      color: rgb(255, 58, 58);
     }
 
     .basketItemContainer {

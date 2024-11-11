@@ -12,6 +12,7 @@ export default function Nav() {
   return (
     <nav className={styles.king}>
       <ul>
+        <li className={styles.shopName}>VogueShop</li>
         <li>
           <Link to={"/"}>
             <FontAwesomeIcon icon={faHome} />
