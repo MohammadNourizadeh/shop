@@ -20,6 +20,11 @@
         color: rgba(255, 255, 255, 0.77);
       }
     }
+
+    .focused {
+      border-bottom: 1px solid;
+      margin-bottom: -1px;
+    }
   }
 
   .basketItemContainer {
