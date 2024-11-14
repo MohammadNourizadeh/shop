@@ -27,7 +27,7 @@ export default function NavItemsList() {
       <li>
         <Link
           className={focusedpage === "home" ? styles.focused : ""}
-          to={"/"}
+          to={"/admin/home"}
           onClick={() => {
             handleFocusedPage("home");
           }}
@@ -62,7 +62,7 @@ export default function NavItemsList() {
       </li>
       <li className={styles.basketItemContainer}>
         <Link
-          to={"/"}
+          to={"/admin/basket"}
           onClick={() => {
             handleFocusedPage("basket");
           }}

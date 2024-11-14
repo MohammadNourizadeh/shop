@@ -4,6 +4,7 @@ import HomePage, { fetchData } from "./pages/HomePage/HomePage";
 import ProductInfoPage, {
   fetchProductInfo,
 } from "./pages/productInfoPage/ProductInfoPage";
+import BasketPage from "./pages/basketPage/BasketPage";
 
 export const routes = [
   {
@@ -25,6 +26,10 @@ export const routes = [
         loader: async ({ params }) => {
           return await fetchProductInfo(params);
         },
+      },
+      {
+        path: "/admin/basket",
+        element: <BasketPage />,
       },
     ],
   },
