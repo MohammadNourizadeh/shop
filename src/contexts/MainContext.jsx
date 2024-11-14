@@ -4,15 +4,15 @@ const MainContext = createContext(null);
 
 export const MainContextProvider = ({ children }) => {
   const [choosedProducts, setChoosedProducts] = useState([]);
-  const [sumPrices, setSumPrices] = useState(0);
+  const [totalPrices, setTotalPrices] = useState(0);
 
   return (
     <MainContext.Provider
       value={{
         choosedProducts,
         setChoosedProducts,
-        sumPrices,
-        setSumPrices,
+        totalPrices,
+        setTotalPrices,
       }}
     >
       {children}
