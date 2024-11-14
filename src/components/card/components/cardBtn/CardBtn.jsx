@@ -5,7 +5,8 @@ import styles from "./CardBtn.module.scss";
 
 export default function CardBtn({ product }) {
   // context
-  const { choosedProducts, setChoosedProducts } = useContext(MainContext);
+  const { choosedProducts, setChoosedProducts, setTotalPrices, totalPrices } =
+    useContext(MainContext);
 
   // var
   const productIndex = choosedProducts.findIndex(
@@ -13,7 +14,7 @@ export default function CardBtn({ product }) {
   );
 
   // func
-  const handelAdd = () => {
+  const handelAdd = (product) => {
     if (productIndex === -1) {
       setChoosedProducts((prev) => [...prev, { ...product, count: 1 }]);
       toast.success("added");
@@ -22,9 +23,12 @@ export default function CardBtn({ product }) {
       temp[productIndex].count++;
       setChoosedProducts(temp);
     }
+    setTotalPrices((prev) => prev + product.price);
+
+    console.log(totalPrices);
   };
 
-  const handelRemove = () => {
+  const handelRemove = (product) => {
     if (choosedProducts[productIndex]?.count > 1) {
       const temp = [...choosedProducts];
       temp[productIndex].count--;
@@ -33,15 +37,28 @@ export default function CardBtn({ product }) {
       const temp = choosedProducts.filter((item) => item.id !== product.id);
       setChoosedProducts(temp);
     }
+    setTotalPrices((prev) => prev - product.price);
+
+    console.log(totalPrices);
   };
 
   return (
     <div className={styles.king}>
-      <button className={styles.btnGreen} onClick={handelAdd}>
+      <button
+        className={styles.btnGreen}
+        onClick={() => {
+          handelAdd(product);
+        }}
+      >
         add
       </button>
       {productIndex !== -1 && (
-        <button className={styles.btnRed} onClick={handelRemove}>
+        <button
+          className={styles.btnRed}
+          onClick={() => {
+            handelRemove(product);
+          }}
+        >
           remove
         </button>
       )}
