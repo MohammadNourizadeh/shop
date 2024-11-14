@@ -4,4 +4,14 @@
   align-items: center;
   gap: 15px;
   padding: 10px;
+
+  hr {
+    width: 50%;
+  }
+
+  .billContainer {
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+  }
 }

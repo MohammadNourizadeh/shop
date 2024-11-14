@@ -5,13 +5,17 @@ import ChoosedCard from "./components/choosedCard/ChoosedCard";
 
 export default function BasketPage() {
   // context
-  const { choosedProducts } = useContext(MainContext);
+  const { choosedProducts, totalPrices } = useContext(MainContext);
 
   return (
     <div className={styles.king}>
       {choosedProducts.map((choosedProduct) => (
         <ChoosedCard product={choosedProduct} key={choosedProduct.id} />
       ))}
+      <hr />
+      <div className={styles.billContainer}>
+        <span>total:</span> <span>$ {totalPrices}</span>
+      </div>
     </div>
   );
 }
