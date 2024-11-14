@@ -5,7 +5,7 @@ import styles from "./CardBtn.module.scss";
 
 export default function CardBtn({ product }) {
   // context
-  const { choosedProducts, setChoosedProducts, setTotalPrices, totalPrices } =
+  const { choosedProducts, setChoosedProducts, setTotalPrices } =
     useContext(MainContext);
 
   // var
@@ -24,8 +24,6 @@ export default function CardBtn({ product }) {
       setChoosedProducts(temp);
     }
     setTotalPrices((prev) => prev + product.price);
-
-    console.log(totalPrices);
   };
 
   const handelRemove = (product) => {
@@ -38,8 +36,6 @@ export default function CardBtn({ product }) {
       setChoosedProducts(temp);
     }
     setTotalPrices((prev) => prev - product.price);
-
-    console.log(totalPrices);
   };
 
   return (
