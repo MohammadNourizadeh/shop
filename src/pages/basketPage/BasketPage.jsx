@@ -2,10 +2,11 @@ import { useContext } from "react";
 import MainContext from "../../contexts/MainContext";
 import styles from "./BasketPage.module.scss";
 import ChoosedCard from "./components/choosedCard/ChoosedCard";
+import TotalPrices from "./components/totalPrices/TotalPrices";
 
 export default function BasketPage() {
   // context
-  const { choosedProducts, totalPrices } = useContext(MainContext);
+  const { choosedProducts } = useContext(MainContext);
 
   return (
     <div className={styles.king}>
@@ -13,9 +14,7 @@ export default function BasketPage() {
         <ChoosedCard product={choosedProduct} key={choosedProduct.id} />
       ))}
       <hr />
-      <div className={styles.billContainer}>
-        <span>total:</span> <span>$ {totalPrices}</span>
-      </div>
+      <TotalPrices />
     </div>
   );
 }

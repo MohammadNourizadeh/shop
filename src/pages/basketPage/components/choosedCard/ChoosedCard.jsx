@@ -1,6 +1,5 @@
 import { faMultiply } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
 import CardBtn from "../../../../components/card/components/cardBtn/CardBtn";
 import styles from "./ChoosedCard.module.scss";
 
