@@ -1,10 +1,9 @@
 import { Navigate } from "react-router-dom";
 import Admin from "./layOuts/admin/Admin";
-import HomePage, { fetchData } from "./pages/HomePage/HomePage";
-import ProductInfoPage, {
-  fetchProductInfo,
-} from "./pages/productInfoPage/ProductInfoPage";
 import BasketPage from "./pages/basketPage/BasketPage";
+import HomePage from "./pages/HomePage/HomePage";
+import ProductInfoPage from "./pages/productInfoPage/ProductInfoPage";
+import { fetchData } from "./utils/helper";
 
 export const routes = [
   {
@@ -18,13 +17,21 @@ export const routes = [
       {
         path: "/admin/home",
         element: <HomePage />,
-        loader: fetchData,
+        loader: async () => {
+          return await fetchData(
+            null,
+            "https://api.escuelajs.co/api/v1/products"
+          );
+        },
       },
       {
         path: "/admin/product/:id",
         element: <ProductInfoPage />,
         loader: async ({ params }) => {
-          return await fetchProductInfo(params);
+          return await fetchData(
+            params,
+            "https://api.escuelajs.co/api/v1/products"
+          );
         },
       },
       {
