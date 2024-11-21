@@ -1,5 +1,14 @@
 import styles from "./PageBtn.module.scss";
 
-export default function PageBtn({ pageNum }) {
-  return <button className={styles.king}>{pageNum}</button>;
+export default function PageBtn({ pageNum, onChange }) {
+  return (
+    <button
+      className={styles.king}
+      onClick={() => {
+        onChange(pageNum);
+      }}
+    >
+      {pageNum}
+    </button>
+  );
 }

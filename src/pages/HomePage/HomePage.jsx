@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import Card from "../../components/card/Card";
 import PageBtn from "../../components/pageBtn/PageBtn";
@@ -6,6 +7,7 @@ import styles from "./HomePage.module.scss";
 export default function HomePage() {
   // state
   // const [products, setProducts] = useState([]);
+  const [focusedPage, setFocusedPage] = useState(1);
 
   // var
   const products = useLoaderData();
@@ -17,21 +19,41 @@ export default function HomePage() {
   //     .then((data) => setProducts(data));
   // }, []);
 
-  const pages = [1, 2, 3, 4, 5];
+  const createPagination = (products) => {
+    const pages = [];
+    let currentPage = 1;
+
+    products.map((_, index) => {
+      if (index % 10 === 0) {
+        pages.push(currentPage);
+        currentPage++;
+      }
+    });
+
+    return pages.map((pageNum) => (
+      <PageBtn
+        pageNum={pageNum}
+        key={pageNum}
+        onChange={(pageNumber) => {
+          setFocusedPage(pageNumber);
+        }}
+      />
+    ));
+  };
 
   return (
     <>
       <div className={styles.king}>
         <div className={styles.productScontainer}>
-          {products.map((product) => (
-            <Card product={product} key={product.id} />
-          ))}
+          {products.map((product, index) => {
+            if (index >= focusedPage * 10 - 10 && index < focusedPage * 10) {
+              return <Card product={product} key={product.id} />;
+            }
+          })}
         </div>
         <div className={styles.pageNumbersContainer}>
-          {pages.map((_, index) => (
-            <PageBtn pageNum={index + 1} />
-          ))}
-        </div>  
+          {createPagination(products)}
+        </div>
       </div>
     </>
   );
