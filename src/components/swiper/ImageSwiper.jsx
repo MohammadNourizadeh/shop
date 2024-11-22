@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 export default function ImageSwiper({
   images,
   imageAlt,
-  isLink = false,
+  notLink,
   linkAddress,
 }) {
   return (
@@ -13,11 +13,11 @@ export default function ImageSwiper({
       modules={[Navigation, Pagination, EffectFade]}
       pagination={{ clickable: true }}
       navigation
-      effect={isLink ? "fade" : ""}
+      effect={notLink ? "fade" : ""}
     >
       {images?.map((image, index) => (
         <SwiperSlide key={index}>
-          {isLink ? (
+          {notLink ? (
             <img src={image} alt={imageAlt} />
           ) : (
             <Link to={linkAddress}>

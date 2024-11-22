@@ -21,7 +21,7 @@ export default function Card({ product, productInfoPage = false }) {
         <ImageSwiper
           images={product.images}
           imageAlt={product.title}
-          isLink={productInfoPage}
+          notLink={productInfoPage}
           linkAddress={`/admin/product/${product.id}`}
         />
         {productIndex !== -1 && (
