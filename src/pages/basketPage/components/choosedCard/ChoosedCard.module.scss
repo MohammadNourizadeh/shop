@@ -1,6 +1,6 @@
 .king {
   position: relative;
-  width: 35%;
+  width: 540px;
   padding: 5px;
   border-radius: 10px;
   display: flex;
@@ -8,6 +8,7 @@
   gap: 10px;
   box-shadow: 0 0 8px 3px rgba(152, 152, 152, 0.444);
   background-color: rgb(232, 232, 232);
+  color: black;
 
   .productImgContainer {
     width: 23%;

@@ -4,6 +4,12 @@
   font-size: 1.2em;
   padding: 8px;
 
+  &:hover #showDropDown {
+    height: 400px;
+    box-shadow: 0px 0px 5px 2px rgb(94, 94, 94);
+    padding: 10px;
+  }
+
   .basketItemsCount {
     font-size: 0.8em;
     text-align: center;
@@ -20,5 +26,21 @@
   .focused {
     border-bottom: 1px solid;
     margin-bottom: -1px;
+  }
+
+  .dropDown {
+    position: absolute;
+    height: 0px;
+    width: 600px;
+    top: 50px;
+    right: calc(50% - 270px);
+    transition: 1.5s 1s;
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    background-color: white;
+    border-radius: 20px;
   }
 }
