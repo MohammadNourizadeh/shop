@@ -27,24 +27,4 @@
       margin-bottom: -1px;
     }
   }
-
-  .basketItemContainer {
-    margin-left: auto;
-    position: relative;
-    font-size: 1.2em;
-    padding: 8px;
-
-    .basketItemsCount {
-      font-size: 0.8em;
-      text-align: center;
-      position: absolute;
-      top: 0;
-      right: 0;
-      color: rgb(255, 255, 255);
-      border: 1px solid red;
-      background-color: red;
-      border-radius: 30%;
-      padding: 0px 3px;
-    }
-  }
 }

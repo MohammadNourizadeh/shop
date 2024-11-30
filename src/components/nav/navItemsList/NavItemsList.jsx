@@ -1,21 +1,17 @@
 import {
-  faBasketShopping,
   faExclamationCircle,
   faHome,
   faStore,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import MainContext from "../../../contexts/MainContext";
 import styles from "./NavItemsList.module.scss";
+import BasketItem from "./components/BasketItem";
 
 export default function NavItemsList() {
-  // context
-  const { choosedProducts } = useContext(MainContext);
-
   // state
-  const [focusedpage, setFocusedPage] = useState("home");
+  const [focusedPage, setFocusedPage] = useState("home");
 
   // func
   const handleFocusedPage = (pageName) => {
@@ -26,7 +22,7 @@ export default function NavItemsList() {
     <ul className={styles.king}>
       <li>
         <Link
-          className={focusedpage === "home" ? styles.focused : ""}
+          className={focusedPage === "home" ? styles.focused : ""}
           to={"/admin/home"}
           onClick={() => {
             handleFocusedPage("home");
@@ -38,7 +34,7 @@ export default function NavItemsList() {
       </li>
       <li>
         <Link
-          className={focusedpage === "store" ? styles.focused : ""}
+          className={focusedPage === "store" ? styles.focused : ""}
           to={"/"}
           onClick={() => {
             handleFocusedPage("store");
@@ -50,7 +46,7 @@ export default function NavItemsList() {
       </li>
       <li>
         <Link
-          className={focusedpage === "about" ? styles.focused : ""}
+          className={focusedPage === "about" ? styles.focused : ""}
           to={"/"}
           onClick={() => {
             handleFocusedPage("about");
@@ -60,22 +56,12 @@ export default function NavItemsList() {
           about
         </Link>
       </li>
-      <li className={styles.basketItemContainer}>
-        <Link
-          to={"/admin/basket"}
-          onClick={() => {
-            handleFocusedPage("basket");
-          }}
-          className={focusedpage === "basket" ? styles.focused : ""}
-        >
-          {choosedProducts.length > 0 && (
-            <span className={styles.basketItemsCount}>
-              {choosedProducts.length}
-            </span>
-          )}
-          <FontAwesomeIcon icon={faBasketShopping} />
-        </Link>
-      </li>
+      <BasketItem
+        focusedPage={focusedPage}
+        onFocus={(pageName) => {
+          handleFocusedPage(pageName);
+        }}
+      />
     </ul>
   );
 }
