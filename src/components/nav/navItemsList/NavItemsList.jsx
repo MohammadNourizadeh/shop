@@ -56,12 +56,7 @@ export default function NavItemsList() {
           about
         </Link>
       </li>
-      <BasketItem
-        focusedPage={focusedPage}
-        onFocus={(pageName) => {
-          handleFocusedPage(pageName);
-        }}
-      />
+      <BasketItem focusedPage={focusedPage} onFocus={handleFocusedPage} />
     </ul>
   );
 }
